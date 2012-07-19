@@ -1,9 +1,31 @@
 
-
 This document details the use regarding Perl's -p command line swtich:
 
 As per the command line documentation:
 
       -p              assume loop like -n but print line also, like sed
 
-Which means it will wrap a while(<>){} around the code that goes in {} but it also prints the '$_' variable.
+Which means it will wrap a while(<>){} around the code that goes in {} but it also prints the '$_' variable. The $_ variable is printed at the state it is just before the closing '.
+
+Eg: Increment the $_ and then add 3 to it
+
+$ cat a.txt
+1
+2
+3
+4
+5
+6
+7
+8
+$ cat a.txt| perl -ple '$_++,$_+=3'
+5
+6
+7
+8
+9
+10
+11
+12
+
+
