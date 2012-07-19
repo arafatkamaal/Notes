@@ -28,4 +28,38 @@ $ cat a.txt| perl -ple '$_++,$_+=3'
 11
 12
 
+---
 
+$. variable stores the line number of the last filehandle accessed, this can be use to do some range based operations.
+
+like for example: print lines 4-10
+
+[mkamaal@shareeast-dr tmp]$ cat a.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+a
+s
+d
+f
+q
+w
+e
+r
+t
+y
+
+[mkamaal@shareeast-dr tmp]$ cat a.txt| perl -ple '$_ x=(($.>3) && ($.<11))'
+4
+5
+6
+7
+8
+9
+a
