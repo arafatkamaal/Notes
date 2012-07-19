@@ -1,11 +1,11 @@
-
 This document details the use regarding Perl's -p command line swtich:
 
 As per the command line documentation:
 
       -p              assume loop like -n but print line also, like sed
 
-Which means it will wrap a while(<>){} around the code that goes in {} but it also prints the '$_' variable. The $_ variable is printed at the state it is just before the closing '.
+Which means it will wrap a while(<>){} around the code that goes in {} but it also prints the '$_' variable. 
+The $_ variable is printed at the state it is just before the closing '.
 
 Eg: Increment the $_ and then add 3 to it
 
